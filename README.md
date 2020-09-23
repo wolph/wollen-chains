@@ -19,6 +19,6 @@ After that you can access the server through any client that supports socks:
 
     curl -vvv -x 'socks5h://127.0.0.1:1080' ifconfig.me 
 
-The `UPSTREAM_PORT` is optional and defaults to `1080`.
-The `SOCKS_USER` is `sockd` by default.
-The `SOCKS_PASS` is generated automatically by default and is shown in the logs.
+- The `UPSTREAM_PORT` is optional and defaults to `1080`.
+- The `SOCKS_USER` is `sockd` by default.
+- The `SOCKS_PASS` is generated automatically by default and is shown in the logs.
