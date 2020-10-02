@@ -11,6 +11,7 @@ ENV IP_URLS \
     https://ipinfo.io/ip
 
 ENV SOCKS_USER sockd
+ENV SOCKS_PASS GENERATE_RANDOM
 ENV UPSTREAM_HOST 0.0.0.0
 ENV UPSTREAM_PORT 1080
 
@@ -28,6 +29,7 @@ RUN chmod +x /scripts/*
 WORKDIR /scripts
 
 COPY sockd.conf /etc/sockd.conf.template
+COPY sockd_no_auth.conf /etc/sockd_no_auth.conf.template
 
 ENTRYPOINT ["/sbin/tini", "--", "/scripts/main.sh"]
 HEALTHCHECK --timeout=5s --start-period=30s CMD /sbin/tini -- /scripts/health.sh
