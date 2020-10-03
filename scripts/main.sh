@@ -38,7 +38,7 @@ if [ "$SHELL" ]; then
   SOCKD_ARGS="${SOCKD_ARGS} -D"
 fi
 
-sockd $SOCKD_ARGS
+timeout $TIMEOUT sockd $SOCKD_ARGS
 
 if [ "$SHELL" ]; then
   exec zsh

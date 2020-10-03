@@ -14,6 +14,9 @@ ENV SOCKS_USER sockd
 ENV SOCKS_PASS GENERATE_RANDOM
 ENV UPSTREAM_HOST 0.0.0.0
 ENV UPSTREAM_PORT 1080
+# Automatically kill after 1 hour, set to 0 to disable.
+# Supports s(econds), m(inutes), h(ours) and d(ays)
+ENV TIMEOUT 1h
 
 EXPOSE 1080
 
