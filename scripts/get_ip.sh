@@ -31,5 +31,5 @@ else
   export BASE_IP=$(head -n 1 /base_ip)
 fi
 
-export HTTP_PROXY=socks5h://localhost:1080
-export HTTPS_PROXY=socks5h://localhost:1080
+export HTTP_PROXY=socks5h://127.0.0.1:1080
+export HTTPS_PROXY=socks5h://127.0.0.1:1080
