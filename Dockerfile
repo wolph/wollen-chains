@@ -17,6 +17,7 @@ ENV UPSTREAM_PORT 1080
 # Automatically kill after 1 hour, set to 0 to disable.
 # Supports s(econds), m(inutes), h(ours) and d(ays)
 ENV TIMEOUT 1h
+ENV PATH="/scripts:${PATH}"
 
 EXPOSE 1080
 
@@ -34,5 +35,5 @@ WORKDIR /scripts
 COPY sockd.conf /etc/sockd.conf.template
 COPY sockd_no_auth.conf /etc/sockd_no_auth.conf.template
 
-ENTRYPOINT ["/sbin/tini", "--", "/scripts/main.sh"]
-HEALTHCHECK --timeout=5s --start-period=30s CMD /sbin/tini -- /scripts/health.sh
+ENTRYPOINT ["/sbin/tini", "--", "/scripts/main"]
+HEALTHCHECK --timeout=5s --interval=30s --start-period=30s --retries=3 CMD /sbin/tini -- /scripts/health

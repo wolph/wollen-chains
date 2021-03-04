@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Fetch base IP before initializing OpenVPN
-. ./get_ip.sh
+get_ip
 
 echo '############# ENV ################'
 env
